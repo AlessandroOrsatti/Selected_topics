@@ -1,0 +1,1104 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		052277633CD645AA88203EBC /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B072F99983CA4777801B9857 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				E139BEB0DAA162559438A8C3 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				192E021F2AA342B591C9634F /* PBXTargetDependency */,
+				C77C4AD0B80E4631818664B7 /* PBXTargetDependency */,
+				78AEC7C673924628904AC8B7 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		467431834DB64849890DB330 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B39A44CC2D0E4014AD043497 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				E19408DC4835DE6EFABC75F8 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		71085AF07D664B538695BF65 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DCD0C6F14DE945A2B66A76AF /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				13663981EDE04E87A6F3182B /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		316364934D7D4F2AAB781BDE /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_graphics/juce_graphics.mm */ = {isa = PBXBuildFile; fileRef = BD9EFED6981F41C580CBE43D /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_graphics/juce_graphics.mm */; };
+		51FCF2A4662247359036399E /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_events/juce_events.mm */ = {isa = PBXBuildFile; fileRef = B77DF43940FB4BAAA084538B /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_events/juce_events.mm */; };
+		5AA7960784C640B4A54531CA /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework */ = {isa = PBXBuildFile; fileRef = B5C28DFBE88045D88D3B8783 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework */; };
+		5F732668D947477E86F60AC0 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_data_structures/juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = 0011C7A09AE549A7B52868F8 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_data_structures/juce_data_structures.mm */; };
+		840D1FEA05B84855A91696A1 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework */ = {isa = PBXBuildFile; fileRef = 6DD89CBB8B5842B291DBA990 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework */; };
+		92FEF4FA35C94B47B23E9E16 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_gui_basics/juce_gui_basics.mm */ = {isa = PBXBuildFile; fileRef = 8FF1F7D6FF5E446B99CB9D14 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_gui_basics/juce_gui_basics.mm */; };
+		9BBC08DC3AD3437AA8B3046C /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_audio_plugin_client/LV2/juce_LV2TurtleDumpProgram.cpp */ = {isa = PBXBuildFile; fileRef = ECF8A84E9F784F5395928A91 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_audio_plugin_client/LV2/juce_LV2TurtleDumpProgram.cpp */; };
+		BA66FDA844F74CA4A7A684A9 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Foundation.framework */ = {isa = PBXBuildFile; fileRef = DDC5F671E847496DAA8E2336 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Foundation.framework */; };
+		BA773B6A08BB42EAB272F890 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_core/juce_core.mm */ = {isa = PBXBuildFile; fileRef = 23FC68DC52294A7DB3541721 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_core/juce_core.mm */; };
+		C8D6FFED61B244F9B981590C /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/Main.cpp */ = {isa = PBXBuildFile; fileRef = D182F71E9C604C3A8B6DFE23 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/Main.cpp */; };
+		CC93CD213F9744A8A6115F17 /* /Users/alessandroorsatti/Documents/JUCE/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 8B4D7EC74BA74A6AB0E2D3CB /* /Users/alessandroorsatti/Documents/JUCE/CMakeLists.txt */; };
+		CDFE1971E154489E8C73B1D3 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 383A5CA3CD824561996A4F54 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/CMakeLists.txt */; };
+		E75000B0727644CF8A8B03F0 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juce_build_tools/juce_build_tools.cpp */ = {isa = PBXBuildFile; fileRef = FE3F239FEF7945699C64A77F /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juce_build_tools/juce_build_tools.cpp */; };
+		F500B40B4F4F47529673D9A7 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = A401C65175B24CA7B75FEA76 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		43828151B7F441FD91228751 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		8658A02452A644949947EC8B /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		873B4BD6C87846C59A386156 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		E07DA1F7FEB24275BC7DEE41 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		39526680C77D4ED09C7A7CE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 341D4C102DFF4599B4AE2B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 052277633CD645AA88203EBC;
+			remoteInfo = ALL_BUILD;
+		};
+		75BC786229C44D408B695123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 341D4C102DFF4599B4AE2B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 467431834DB64849890DB330;
+			remoteInfo = ZERO_CHECK;
+		};
+		8BF4726B3DC546B6ABBE5FDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 341D4C102DFF4599B4AE2B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 467431834DB64849890DB330;
+			remoteInfo = ZERO_CHECK;
+		};
+		8CFEA8269F6E4D89A90B6022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 341D4C102DFF4599B4AE2B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BD3E85F22AB41C0B55E1823;
+			remoteInfo = juceaide;
+		};
+		C04E781878B14CA68536082C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 341D4C102DFF4599B4AE2B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 467431834DB64849890DB330;
+			remoteInfo = ZERO_CHECK;
+		};
+		DBE5B44AAC8A44E2913A7945 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 341D4C102DFF4599B4AE2B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D600FF6552A4C2F95759231;
+			remoteInfo = juce_lv2_helper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0011C7A09AE549A7B52868F8 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_data_structures/juce_data_structures.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = juce_data_structures.mm; path = modules/juce_data_structures/juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
+		186E44554F884A3592FB25D5 /* juceaide */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = juceaide; sourceTree = BUILT_PRODUCTS_DIR; };
+		23FC68DC52294A7DB3541721 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_core/juce_core.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = juce_core.mm; path = modules/juce_core/juce_core.mm; sourceTree = SOURCE_ROOT; };
+		383A5CA3CD824561996A4F54 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = extras/Build/juceaide/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		4AAD99229A624824B211DC89 /* /Users/alessandroorsatti/Documents/JUCE/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		6DD89CBB8B5842B291DBA990 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		8B4D7EC74BA74A6AB0E2D3CB /* /Users/alessandroorsatti/Documents/JUCE/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		8FF1F7D6FF5E446B99CB9D14 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_gui_basics/juce_gui_basics.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = juce_gui_basics.mm; path = modules/juce_gui_basics/juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
+		A401C65175B24CA7B75FEA76 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/QuartzCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		B5C28DFBE88045D88D3B8783 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		B77DF43940FB4BAAA084538B /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_events/juce_events.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = juce_events.mm; path = modules/juce_events/juce_events.mm; sourceTree = SOURCE_ROOT; };
+		BD9EFED6981F41C580CBE43D /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_graphics/juce_graphics.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = juce_graphics.mm; path = modules/juce_graphics/juce_graphics.mm; sourceTree = SOURCE_ROOT; };
+		CB0A3A126DAC40EB9F1F4657 /* juce_lv2_helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = juce_lv2_helper; sourceTree = BUILT_PRODUCTS_DIR; };
+		D182F71E9C604C3A8B6DFE23 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/Main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Main.cpp; path = extras/Build/juceaide/Main.cpp; sourceTree = SOURCE_ROOT; };
+		DDC5F671E847496DAA8E2336 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Foundation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		ECF8A84E9F784F5395928A91 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_audio_plugin_client/LV2/juce_LV2TurtleDumpProgram.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = juce_LV2TurtleDumpProgram.cpp; path = modules/juce_audio_plugin_client/LV2/juce_LV2TurtleDumpProgram.cpp; sourceTree = SOURCE_ROOT; };
+		FE3F239FEF7945699C64A77F /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juce_build_tools/juce_build_tools.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = juce_build_tools.cpp; path = extras/Build/juce_build_tools/juce_build_tools.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EC22129F5E84B9B86E0A7F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A95743AC2F814095961F5B94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FC1D38B7FAE4D3CB515CF67 = {
+			isa = PBXGroup;
+			children = (
+				EF0E2050699D4BE2B9BF90C9 /* juce_lv2_helper */,
+				CE82083B9C754753A85688D1 /* ALL_BUILD */,
+				26ED6E9F445E420089EA27DE /* juceaide */,
+				78A189ABD1BD4F6A8EAC99E2 /* Products */,
+				3E070BEBA2814CB3A57CB584 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		26ED6E9F445E420089EA27DE /* juceaide */ = {
+			isa = PBXGroup;
+			children = (
+				7045AF1C37C74EACBBE91D0F /* Source Files */,
+				383A5CA3CD824561996A4F54 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/CMakeLists.txt */,
+			);
+			name = juceaide;
+			sourceTree = "<group>";
+		};
+		2E62E105844E4BE1B36EFB94 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECF8A84E9F784F5395928A91 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_audio_plugin_client/LV2/juce_LV2TurtleDumpProgram.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		3E070BEBA2814CB3A57CB584 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A401C65175B24CA7B75FEA76 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/QuartzCore.framework */,
+				6DD89CBB8B5842B291DBA990 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework */,
+				DDC5F671E847496DAA8E2336 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Foundation.framework */,
+				B5C28DFBE88045D88D3B8783 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7045AF1C37C74EACBBE91D0F /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE3F239FEF7945699C64A77F /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juce_build_tools/juce_build_tools.cpp */,
+				D182F71E9C604C3A8B6DFE23 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/Main.cpp */,
+				23FC68DC52294A7DB3541721 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_core/juce_core.mm */,
+				0011C7A09AE549A7B52868F8 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_data_structures/juce_data_structures.mm */,
+				B77DF43940FB4BAAA084538B /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_events/juce_events.mm */,
+				BD9EFED6981F41C580CBE43D /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_graphics/juce_graphics.mm */,
+				8FF1F7D6FF5E446B99CB9D14 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_gui_basics/juce_gui_basics.mm */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		78A189ABD1BD4F6A8EAC99E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB0A3A126DAC40EB9F1F4657 /* juce_lv2_helper */,
+				186E44554F884A3592FB25D5 /* juceaide */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		993B8797831B46678D2C393A /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		CE82083B9C754753A85688D1 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				993B8797831B46678D2C393A /* CMake Rules */,
+				4AAD99229A624824B211DC89 /* /Users/alessandroorsatti/Documents/JUCE/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		EF0E2050699D4BE2B9BF90C9 /* juce_lv2_helper */ = {
+			isa = PBXGroup;
+			children = (
+				2E62E105844E4BE1B36EFB94 /* Source Files */,
+				8B4D7EC74BA74A6AB0E2D3CB /* /Users/alessandroorsatti/Documents/JUCE/CMakeLists.txt */,
+			);
+			name = juce_lv2_helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BD3E85F22AB41C0B55E1823 /* juceaide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F311E513391B46E98576139A /* Build configuration list for PBXNativeTarget "juceaide" */;
+			buildPhases = (
+				AB11C78AC9564226A664F8FA /* Sources */,
+				4EC22129F5E84B9B86E0A7F6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7170CFC174E24AD1B8C49B01 /* PBXTargetDependency */,
+			);
+			name = juceaide;
+			productName = juceaide;
+			productReference = 186E44554F884A3592FB25D5 /* juceaide */;
+			productType = "com.apple.product-type.tool";
+		};
+		5D600FF6552A4C2F95759231 /* juce_lv2_helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A2D2025688A4A12904234C8 /* Build configuration list for PBXNativeTarget "juce_lv2_helper" */;
+			buildPhases = (
+				3F3B0A95C8B54031A3B2B055 /* Sources */,
+				A95743AC2F814095961F5B94 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B36396C099F45FAA011ED9C /* PBXTargetDependency */,
+			);
+			name = juce_lv2_helper;
+			productName = juce_lv2_helper;
+			productReference = CB0A3A126DAC40EB9F1F4657 /* juce_lv2_helper */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		341D4C102DFF4599B4AE2B50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1420;
+			};
+			buildConfigurationList = C1BFCCE1CCF34ABDA8440F75 /* Build configuration list for PBXProject "JUCE" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				873B4BD6C87846C59A386156 /* Debug */,
+				E07DA1F7FEB24275BC7DEE41 /* Release */,
+				43828151B7F441FD91228751 /* MinSizeRel */,
+				8658A02452A644949947EC8B /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 0FC1D38B7FAE4D3CB515CF67;
+			projectDirPath = /Users/alessandroorsatti/Documents/JUCE;
+			projectRoot = "";
+			targets = (
+				052277633CD645AA88203EBC /* ALL_BUILD */,
+				467431834DB64849890DB330 /* ZERO_CHECK */,
+				71085AF07D664B538695BF65 /* install */,
+				5D600FF6552A4C2F95759231 /* juce_lv2_helper */,
+				2BD3E85F22AB41C0B55E1823 /* juceaide */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		87AF4882E018677E2624B544 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  /Applications/CMake.app/Contents/bin/cmake -DBUILD_TYPE=$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P cmake_install.cmake
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  /Applications/CMake.app/Contents/bin/cmake -DBUILD_TYPE=$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P cmake_install.cmake
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  /Applications/CMake.app/Contents/bin/cmake -DBUILD_TYPE=$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P cmake_install.cmake
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  /Applications/CMake.app/Contents/bin/cmake -DBUILD_TYPE=$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P cmake_install.cmake
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		E139BEB0DAA162559438A8C3 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/CMakeFiles/ALL_BUILD			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		E19408DC4835DE6EFABC75F8 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/CMakeFiles/ZERO_CHECK			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  make -f /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  make -f /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  make -f /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools
+  make -f /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F3B0A95C8B54031A3B2B055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BBC08DC3AD3437AA8B3046C /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_audio_plugin_client/LV2/juce_LV2TurtleDumpProgram.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB11C78AC9564226A664F8FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E75000B0727644CF8A8B03F0 /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juce_build_tools/juce_build_tools.cpp */,
+				C8D6FFED61B244F9B981590C /* /Users/alessandroorsatti/Documents/JUCE/extras/Build/juceaide/Main.cpp */,
+				BA773B6A08BB42EAB272F890 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_core/juce_core.mm */,
+				5F732668D947477E86F60AC0 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_data_structures/juce_data_structures.mm */,
+				51FCF2A4662247359036399E /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_events/juce_events.mm */,
+				316364934D7D4F2AAB781BDE /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_graphics/juce_graphics.mm */,
+				92FEF4FA35C94B47B23E9E16 /* /Users/alessandroorsatti/Documents/JUCE/modules/juce_gui_basics/juce_gui_basics.mm */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13663981EDE04E87A6F3182B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 052277633CD645AA88203EBC /* ALL_BUILD */;
+			targetProxy = 39526680C77D4ED09C7A7CE6 /* PBXContainerItemProxy */;
+		};
+		192E021F2AA342B591C9634F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D600FF6552A4C2F95759231 /* juce_lv2_helper */;
+			targetProxy = DBE5B44AAC8A44E2913A7945 /* PBXContainerItemProxy */;
+		};
+		1B36396C099F45FAA011ED9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 467431834DB64849890DB330 /* ZERO_CHECK */;
+			targetProxy = C04E781878B14CA68536082C /* PBXContainerItemProxy */;
+		};
+		7170CFC174E24AD1B8C49B01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 467431834DB64849890DB330 /* ZERO_CHECK */;
+			targetProxy = 8BF4726B3DC546B6ABBE5FDF /* PBXContainerItemProxy */;
+		};
+		78AEC7C673924628904AC8B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BD3E85F22AB41C0B55E1823 /* juceaide */;
+			targetProxy = 8CFEA8269F6E4D89A90B6022 /* PBXContainerItemProxy */;
+		};
+		C77C4AD0B80E4631818664B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 467431834DB64849890DB330 /* ZERO_CHECK */;
+			targetProxy = 75BC786229C44D408B695123 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0882C3C991E648C4A4E6B89F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		0AC0225A464C476D841873BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk;
+				SYMROOT = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build;
+			};
+			name = Debug;
+		};
+		12E03D347F5E4BD98D05D623 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		15E6D5611E944F9FAF85758B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		1817BA8A96754F2FA463D93A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		1AEC064DC97448309424CF5B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "'-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = juce_lv2_helper;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build/juce_lv2_helper.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		28E915996C5442C280AE16F9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		30CD80696D384CEDAABD1D11 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build;
+			};
+			name = RelWithDebInfo;
+		};
+		3BA3A49D8C744C748E9BA74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		420FD3890E5249AD8D241511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		466CAC6081C941539221FC5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'JUCE_STANDALONE_APPLICATION=1'","'JUCE_DISABLE_JUCE_VERSION_PRINTING=1'","'JUCE_USE_CURL=0'","'JUCE_MODULE_AVAILABLE_juce_build_tools=1'","'JUCE_MODULE_AVAILABLE_juce_gui_basics=1'","'JUCE_MODULE_AVAILABLE_juce_graphics=1'","'JUCE_MODULE_AVAILABLE_juce_events=1'","'JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1'","'DEBUG=1'","'_DEBUG=1'","'JUCE_MODULE_AVAILABLE_juce_core=1'","'JUCE_MODULE_AVAILABLE_juce_data_structures=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/JuceLibraryCode,/Users/alessandroorsatti/Documents/JUCE/extras/Build,/Users/alessandroorsatti/Documents/JUCE/modules,"$(inherited)");
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "'-std=c++17'        -Wall -Wshadow-all -Wshorten-64-to-32 -Wstrict-aliasing -Wuninitialized -Wunused-parameter -Wconversion -Wsign-compare -Wint-conversion -Wconditional-uninitialized -Wconstant-conversion -Wsign-conversion -Wbool-conversion -Wextra-semi -Wunreachable-code -Wcast-align -Wshift-sign-overflow -Wmissing-prototypes -Wnullable-to-nonnull-conversion -Wno-ignored-qualifiers -Wswitch-enum -Wpedantic -Wdeprecated -Wzero-as-null-pointer-constant -Wunused-private-field -Woverloaded-virtual -Wreorder -Winconsistent-missing-destructor-override ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-weak_framework Metal","-weak_framework MetalKit","-Xlinker -framework -Xlinker QuartzCore","-Xlinker -framework -Xlinker Cocoa","-Xlinker -framework -Xlinker Foundation","-Xlinker -framework -Xlinker IOKit","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = juceaide;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build/juceaide.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		4D68456B947E43968D3A971C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "'-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = juce_lv2_helper;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build/juce_lv2_helper.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		57C46EF91959413DB882C666 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5BC9C53605584BBE9C18246C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "'-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = juce_lv2_helper;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build/juce_lv2_helper.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		5CFB0ABA5CE74C88AE243DEA /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "'-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = juce_lv2_helper;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build/juce_lv2_helper.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6A14CEE2F79A47F6A4FE7A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		6C0F8748D7FE4138B787967A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		8927CEB77B85443798C28E73 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'JUCE_STANDALONE_APPLICATION=1'","'JUCE_DISABLE_JUCE_VERSION_PRINTING=1'","'JUCE_USE_CURL=0'","'JUCE_MODULE_AVAILABLE_juce_build_tools=1'","'JUCE_MODULE_AVAILABLE_juce_gui_basics=1'","'JUCE_MODULE_AVAILABLE_juce_graphics=1'","'JUCE_MODULE_AVAILABLE_juce_events=1'","'JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1'","'NDEBUG=1'","'_NDEBUG=1'","'JUCE_MODULE_AVAILABLE_juce_core=1'","'JUCE_MODULE_AVAILABLE_juce_data_structures=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/JuceLibraryCode,/Users/alessandroorsatti/Documents/JUCE/extras/Build,/Users/alessandroorsatti/Documents/JUCE/modules,"$(inherited)");
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "'-std=c++17' -Wall -Wshadow-all -Wshorten-64-to-32 -Wstrict-aliasing -Wuninitialized -Wunused-parameter -Wconversion -Wsign-compare -Wint-conversion -Wconditional-uninitialized -Wconstant-conversion -Wsign-conversion -Wbool-conversion -Wextra-semi -Wunreachable-code -Wcast-align -Wshift-sign-overflow -Wmissing-prototypes -Wnullable-to-nonnull-conversion -Wno-ignored-qualifiers -Wswitch-enum -Wpedantic -Wdeprecated -Wzero-as-null-pointer-constant -Wunused-private-field -Woverloaded-virtual -Wreorder -Winconsistent-missing-destructor-override ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-weak_framework Metal","-weak_framework MetalKit","-Xlinker -framework -Xlinker QuartzCore","-Xlinker -framework -Xlinker Cocoa","-Xlinker -framework -Xlinker Foundation","-Xlinker -framework -Xlinker IOKit","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = juceaide;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build/juceaide.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		9300713CA1D44325B2D0BFE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'JUCE_STANDALONE_APPLICATION=1'","'JUCE_DISABLE_JUCE_VERSION_PRINTING=1'","'JUCE_USE_CURL=0'","'JUCE_MODULE_AVAILABLE_juce_build_tools=1'","'JUCE_MODULE_AVAILABLE_juce_gui_basics=1'","'JUCE_MODULE_AVAILABLE_juce_graphics=1'","'JUCE_MODULE_AVAILABLE_juce_events=1'","'JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1'","'NDEBUG=1'","'_NDEBUG=1'","'JUCE_MODULE_AVAILABLE_juce_core=1'","'JUCE_MODULE_AVAILABLE_juce_data_structures=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/JuceLibraryCode,/Users/alessandroorsatti/Documents/JUCE/extras/Build,/Users/alessandroorsatti/Documents/JUCE/modules,"$(inherited)");
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "'-std=c++17'     -flto -Wall -Wshadow-all -Wshorten-64-to-32 -Wstrict-aliasing -Wuninitialized -Wunused-parameter -Wconversion -Wsign-compare -Wint-conversion -Wconditional-uninitialized -Wconstant-conversion -Wsign-conversion -Wbool-conversion -Wextra-semi -Wunreachable-code -Wcast-align -Wshift-sign-overflow -Wmissing-prototypes -Wnullable-to-nonnull-conversion -Wno-ignored-qualifiers -Wswitch-enum -Wpedantic -Wdeprecated -Wzero-as-null-pointer-constant -Wunused-private-field -Woverloaded-virtual -Wreorder -Winconsistent-missing-destructor-override ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-weak_framework Metal","-weak_framework MetalKit","-Xlinker -framework -Xlinker QuartzCore","-Xlinker -framework -Xlinker Cocoa","-Xlinker -framework -Xlinker Foundation","-Xlinker -framework -Xlinker IOKit","-flto","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = juceaide;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build/juceaide.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		A4BA4C7DB3B74CECA29BDADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		ADB4C3E1699B4B2489B222B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build;
+			};
+			name = Release;
+		};
+		B9EE0C6537064D14B9EE102F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build;
+			};
+			name = MinSizeRel;
+		};
+		DEF2836EF7E142F194C0B86E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		EA83540A0CD341E3B196399D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'JUCE_STANDALONE_APPLICATION=1'","'JUCE_DISABLE_JUCE_VERSION_PRINTING=1'","'JUCE_USE_CURL=0'","'JUCE_MODULE_AVAILABLE_juce_build_tools=1'","'JUCE_MODULE_AVAILABLE_juce_gui_basics=1'","'JUCE_MODULE_AVAILABLE_juce_graphics=1'","'JUCE_MODULE_AVAILABLE_juce_events=1'","'JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1'","'NDEBUG=1'","'_NDEBUG=1'","'JUCE_MODULE_AVAILABLE_juce_core=1'","'JUCE_MODULE_AVAILABLE_juce_data_structures=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/JuceLibraryCode,/Users/alessandroorsatti/Documents/JUCE/extras/Build,/Users/alessandroorsatti/Documents/JUCE/modules,"$(inherited)");
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "'-std=c++17' -Wall -Wshadow-all -Wshorten-64-to-32 -Wstrict-aliasing -Wuninitialized -Wunused-parameter -Wconversion -Wsign-compare -Wint-conversion -Wconditional-uninitialized -Wconstant-conversion -Wsign-conversion -Wbool-conversion -Wextra-semi -Wunreachable-code -Wcast-align -Wshift-sign-overflow -Wmissing-prototypes -Wnullable-to-nonnull-conversion -Wno-ignored-qualifiers -Wswitch-enum -Wpedantic -Wdeprecated -Wzero-as-null-pointer-constant -Wunused-private-field -Woverloaded-virtual -Wreorder -Winconsistent-missing-destructor-override ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-weak_framework Metal","-weak_framework MetalKit","-Xlinker -framework -Xlinker QuartzCore","-Xlinker -framework -Xlinker Cocoa","-Xlinker -framework -Xlinker Foundation","-Xlinker -framework -Xlinker IOKit","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = juceaide;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/markov_Photographer/build/JUCE/tools/build/juceaide.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A2D2025688A4A12904234C8 /* Build configuration list for PBXNativeTarget "juce_lv2_helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC9C53605584BBE9C18246C /* Debug */,
+				4D68456B947E43968D3A971C /* Release */,
+				5CFB0ABA5CE74C88AE243DEA /* MinSizeRel */,
+				1AEC064DC97448309424CF5B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B072F99983CA4777801B9857 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				420FD3890E5249AD8D241511 /* Debug */,
+				3BA3A49D8C744C748E9BA74C /* Release */,
+				1817BA8A96754F2FA463D93A /* MinSizeRel */,
+				0882C3C991E648C4A4E6B89F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B39A44CC2D0E4014AD043497 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C0F8748D7FE4138B787967A /* Debug */,
+				15E6D5611E944F9FAF85758B /* Release */,
+				57C46EF91959413DB882C666 /* MinSizeRel */,
+				12E03D347F5E4BD98D05D623 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C1BFCCE1CCF34ABDA8440F75 /* Build configuration list for PBXProject "JUCE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC0225A464C476D841873BF /* Debug */,
+				ADB4C3E1699B4B2489B222B3 /* Release */,
+				B9EE0C6537064D14B9EE102F /* MinSizeRel */,
+				30CD80696D384CEDAABD1D11 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DCD0C6F14DE945A2B66A76AF /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BA4C7DB3B74CECA29BDADF /* Debug */,
+				6A14CEE2F79A47F6A4FE7A94 /* Release */,
+				DEF2836EF7E142F194C0B86E /* MinSizeRel */,
+				28E915996C5442C280AE16F9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F311E513391B46E98576139A /* Build configuration list for PBXNativeTarget "juceaide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466CAC6081C941539221FC5C /* Debug */,
+				9300713CA1D44325B2D0BFE2 /* Release */,
+				EA83540A0CD341E3B196399D /* MinSizeRel */,
+				8927CEB77B85443798C28E73 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 341D4C102DFF4599B4AE2B50 /* Project object */;
+}
