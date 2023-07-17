@@ -22,13 +22,13 @@ project(neural_plug_in VERSION 0.0.1)
 # included JUCE directly in your source tree (perhaps as a submodule), you'll need to tell CMake to
 # include that subdirectory as part of the build.
 
-set(CMAKE_PREFIX_PATH "C:/Users/Riccardo/OneDrive - Politecnico di Milano/Desktop/uni/SECONDO ANNO/STMAE/libtorch") # location of libtorch
+set(CMAKE_PREFIX_PATH "/Users/alessandroorsatti/Documents/libtorch") # location of libtorch
 find_package(Torch REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 
 # find_package(JUCE CONFIG REQUIRED)        # If you've installed JUCE to your system
 # or
-add_subdirectory(C:/Juce/JUCE ./JUCE)   
+add_subdirectory(/Users/alessandroorsatti/Documents/JUCE ./JUCE)   
 
 # If you've put JUCE in a subdirectory called JUCE
 add_subdirectory(../RTNeural ${CMAKE_CURRENT_BINARY_DIR}/RTNeural)
