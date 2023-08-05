@@ -1,18 +1,18 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(RTNPlugIN VERSION 0.0.1)
+project(RTNPLUGIN2 VERSION 0.0.1)
 
 # find_package(JUCE CONFIG REQUIRED)        # If you've installed JUCE to your system
 # or
 add_subdirectory(C:/juce/JUCE ./JUCE)                    # If you've put JUCE in a subdirectory called JUCE
 
 
-set(RTNEURAL_STL ON CACHE BOOL "Use RTNeural with this backend" FORCE)
+set(RTNEURAL_EIGEN ON CACHE BOOL "Use RTNeural with EIGEN backend" FORCE)
 add_subdirectory(../RTNeural ${CMAKE_CURRENT_BINARY_DIR}/RTNeural)
 include_directories(../RTNeural)
 
 
-juce_add_plugin(RTNPlugIN
+juce_add_plugin(RTNPLUGIN2
     # VERSION ...                               # Set this if the plugin version is different to the project version
     # ICON_BIG ...                              # ICON_* arguments specify a path to an image file to use as an icon for the Standalone
     # ICON_SMALL ...
@@ -24,24 +24,24 @@ juce_add_plugin(RTNPlugIN
     NEEDS_MIDI_OUTPUT TRUE
     # EDITOR_WANTS_KEYBOARD_FOCUS TRUE/FALSE    # Does the editor need keyboard focus?
     COPY_PLUGIN_AFTER_BUILD TRUE        # Should the plugin be installed to a default location after building?
-    PLUGIN_MANUFACTURER_CODE Yeek               # A four-character manufacturer id with at least one upper-case character
+    PLUGIN_MANUFACTURER_CODE Orsa               # A four-character manufacturer id with at least one upper-case character
     PLUGIN_CODE Dude                            # A unique four-character plugin id with exactly one upper-case character
                                                 # GarageBand 10.3 requires the first letter to be upper-case, and the remaining letters to be lower-case
     FORMATS AU VST3 Standalone                  # The formats to build. Other valid formats are: AAX Unity VST AU AUv3
-    PRODUCT_NAME "RTNPlugIN")        # The name of the final executable, which can differ from the target name
+    PRODUCT_NAME "RTNPLUGIN2")        # The name of the final executable, which can differ from the target name
 
-juce_generate_juce_header(RTNPlugIN)
+juce_generate_juce_header(RTNPLUGIN2)
 
 
 
-target_sources(RTNPlugIN
+target_sources(RTNPLUGIN2
     PRIVATE
     src/PluginEditor.cpp
     src/PluginProcessor.cpp
     src/PluginEditor.h
     src/PluginProcessor.h)
 
-target_compile_definitions(RTNPlugIN
+target_compile_definitions(RTNPLUGIN2
     PUBLIC # 
         JUCE_ALSA=1
         JUCE_DIRECTSOUND=1
@@ -57,7 +57,7 @@ target_compile_definitions(RTNPlugIN
         JUCE_VST3_CAN_REPLACE_VST2=0)
 
 
-target_link_libraries(RTNPlugIN
+target_link_libraries(RTNPLUGIN2
     PRIVATE
         juce::juce_audio_utils
         juce::juce_dsp

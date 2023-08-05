@@ -23,38 +23,9 @@ RTNPlugInAudioProcessor::RTNPlugInAudioProcessor()
 #endif
 {
 
-    auto modelFilePath = "C:/Users/Riccardo/OneDrive - Politecnico di Milano/Documenti/GitHub/Selected_topics/neural_plug_in/data/ht1_good_run_026.json";
+    auto modelFilePath = "C:/Users/Riccardo/OneDrive - Politecnico di Milano/Documenti/GitHub/Selected_topics/neural_plug_in/models/modelPhaser16new.json";
     std::ifstream jsonStream(modelFilePath, std::ifstream::binary);
-    //RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 32>, RTNeural::DenseT<float, 32, 1>> model;
-    //loadModel(jsonStream, model);
-    //loadModelRun(jsonStream,modelRun[2]);
-    nlohmann::json modelJson;
-    jsonStream >> modelJson;
-
-    DBG("ok");
-
-    auto& lstm = modelRun[0]->get<0>();
-    auto& lstm1 = modelRun[1]->get<0>();
-    // note that the "lstm." is a prefix used to find the
-    // lstm data in the json file so your python
-    // needs to name the lstm layer 'lstm' if you use lstm. as your prefix
-    std::string prefix = "lstm.";
-    // for LSTM layers, number of hidden  = number of params in a hidden weight set
-    // divided by 4
-    auto hidden_count = modelJson[prefix + ".weight_ih_l0"].size() / 4;
-    DBG("ok2");
-    // assert that the number of hidden units is the same as this count
-    // to ensure the json file we are importing matches the model we defined.
-    RTNeural::torch_helpers::loadLSTM<float>(modelJson, prefix, lstm);
-    RTNeural::torch_helpers::loadLSTM<float>(modelJson, prefix, lstm1);
-
-    DBG("ok3");
-
-    auto& dense = modelRun[0]->get<1>();
-    auto& dense1 = modelRun[1]->get<1>();
-    // as per the lstm prefix, here the json needs a key prefixed with dense.
-    RTNeural::torch_helpers::loadDense<float>(modelJson, "dense.", dense);
-    RTNeural::torch_helpers::loadDense<float>(modelJson, "dense.", dense1);
+    loadModel(jsonStream,model);
 }
 
 RTNPlugInAudioProcessor::~RTNPlugInAudioProcessor()
@@ -128,7 +99,7 @@ void RTNPlugInAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBl
 {
     model.reset();
 
-    modelRun->reset();
+    //modelRun->reset();
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 }
@@ -177,24 +148,17 @@ void RTNPlugInAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
     // This is here to avoid people getting screaming feedback
     // when they first compile a plugin, but obviously you don't need to keep
     // this code if your algorithm always overwrites all the output channels.
-    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
-        buffer.clear (i, 0, buffer.getNumSamples());
-
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
-    //for (int ch = 0; ch < buffer.getNumChannels(); ++ch)
-    //{
-    //    auto* x = buffer.getWritePointer(ch);
-    //    for (int n = 0; n < buffer.getNumSamples(); ++n)
-    //    {
-    //        float input[] = { x[n] };
-    //        x[n] = model.forward(input);
-    //    }
-    //}
+    //for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+    //    buffer.clear (i, 0, buffer.getNumSamples());
+    for (int ch = 0; ch < buffer.getNumChannels(); ++ch)
+    {
+        auto* x = buffer.getWritePointer(ch);
+        for (int n = 0; n < buffer.getNumSamples(); ++n)
+        {
+            float input[] = { x[n] };
+            x[n] = model.forward(input);
+        }
+    }
 }
 
 //==============================================================================
@@ -229,7 +193,7 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
     return new RTNPlugInAudioProcessor();
 }
 
-void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 32>, RTNeural::DenseT<float, 32, 1>>& model)
+void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 16>, RTNeural::DenseT<float, 16, 1>>& model)
 {
     nlohmann::json modelJson;
     jsonStream >> modelJson;
@@ -242,39 +206,41 @@ void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::Mod
     // for LSTM layers, number of hidden  = number of params in a hidden weight set
     // divided by 4
     auto hidden_count = modelJson[prefix + ".weight_ih_l0"].size() / 4;
-    // assert that the number of hidden units is the same as this count
-    // to ensure the json file we are importing matches the model we defined.
     RTNeural::torch_helpers::loadLSTM<float>(modelJson, prefix, lstm);
 
     auto& dense = model.get<1>();
-    // as per the lstm prefix, here the json needs a key prefixed with dense.
     RTNeural::torch_helpers::loadDense<float>(modelJson, "dense.", dense);
 }
 
-void RTNPlugInAudioProcessor::loadModelRun(std::ifstream& jsonStream, std::unique_ptr<RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 32>, RTNeural::DenseT<float, 32, 1>>> modelRun[2])
+void RTNPlugInAudioProcessor::loadModelRun(std::ifstream& jsonStream, RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 32>, RTNeural::DenseT<float, 32, 1>> model)
 {
-    nlohmann::json modelJson;
-    jsonStream >> modelJson;
+    using Vec2d = std::vector<std::vector<float>>;
 
-    DBG("ok");
+    auto& lstm = model.template get<0>();
+    auto& dense = model.template get<1>();
 
-    auto& lstm = modelRun[0]->get<0>();
-    // note that the "lstm." is a prefix used to find the
-    // lstm data in the json file so your python
-    // needs to name the lstm layer 'lstm' if you use lstm. as your prefix
+    // read a JSON file
+    nlohmann::json weights_json;
+    jsonStream >> weights_json;
+
     std::string prefix = "lstm.";
-    // for LSTM layers, number of hidden  = number of params in a hidden weight set
-    // divided by 4
-    auto hidden_count = modelJson[prefix + ".weight_ih_l0"].size() / 4;
-    DBG("ok2");
-    // assert that the number of hidden units is the same as this count
-    // to ensure the json file we are importing matches the model we defined.
-    RTNeural::torch_helpers::loadLSTM<float>(modelJson, prefix, lstm);
 
-    DBG("ok3");
+    Vec2d lstm_weights_ih = weights_json.at("lstm.weight_ih_l0");
+    lstm.setWVals(RTNeural::torch_helpers::detail::transpose(lstm_weights_ih));
 
-    auto& dense = modelRun[0]->get<1>();
-    // as per the lstm prefix, here the json needs a key prefixed with dense.
-    RTNeural::torch_helpers::loadDense<float>(modelJson, "dense.", dense);
+    Vec2d lstm_weights_hh = weights_json.at("lstm.weightweight_hh_l0");
+    lstm.setUVals(RTNeural::torch_helpers::detail::transpose(lstm_weights_hh));
+
+    std::vector<float> lstm_bias_ih = weights_json.at("lstm.bias_ih_l0");
+    std::vector<float> lstm_bias_hh = weights_json.at("lstm.bias_hh_l0");
+    for (int i = 0; i < 80; ++i)
+        lstm_bias_hh[i] += lstm_bias_ih[i];
+    lstm.setBVals(lstm_bias_hh);
+
+    Vec2d dense_weights = weights_json.at("dense.weight");
+    dense.setWeights(dense_weights);
+
+    std::vector<float> dense_bias = weights_json.at("dense.bias");
+    dense.setBias(dense_bias.data());
 
 }
