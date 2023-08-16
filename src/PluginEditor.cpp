@@ -19,9 +19,9 @@ RTNPlugInAudioProcessorEditor::RTNPlugInAudioProcessorEditor (RTNPlugInAudioProc
     
     
     phaserKnob.setSliderStyle(Slider::SliderStyle::Rotary);
-    phaserKnob.setTextBoxStyle(juce::TextBoxBelow, true, 100, 25);
+    phaserKnob.setTextBoxStyle(juce::Slider::TextEntryBoxPosition::TextBoxBelow, true, 100, 25);
     phaserKnob.setRange(0.0f, 1.0f, 0.05f);
-    phaserKnob.setValue(0.5f);
+    phaserKnob.setValue(0.0f);
     phaserKnob.addListener(this);
     addAndMakeVisible(phaserKnob);
 }
@@ -50,7 +50,7 @@ void RTNPlugInAudioProcessorEditor::sliderValueChanged (Slider *slider){
     
     if (slider == &phaserKnob){
         
-        processor.effect = phaserKnob.getValue()
+        audioProcessor.effect = phaserKnob.getValue();
     }
     
 }
