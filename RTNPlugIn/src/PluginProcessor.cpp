@@ -23,9 +23,10 @@ RTNPlugInAudioProcessor::RTNPlugInAudioProcessor()
 #endif
 {
 
-    auto modelFilePath = "C:/Users/Riccardo/OneDrive - Politecnico di Milano/Documenti/GitHub/Selected_topics/neural_plug_in/models/modelPhaser16new.json";
+    auto modelFilePath = "C:/Users/Riccardo/OneDrive - Politecnico di Milano/Desktop/uni/SECONDO ANNO/STMAE/Neural plug in non parametico/RTNPlugIn/modelParametricTest2.json";
     std::ifstream jsonStream(modelFilePath, std::ifstream::binary);
     loadModel(jsonStream,model);
+
 }
 
 RTNPlugInAudioProcessor::~RTNPlugInAudioProcessor()
@@ -155,7 +156,7 @@ void RTNPlugInAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
         auto* x = buffer.getWritePointer(ch);
         for (int n = 0; n < buffer.getNumSamples(); ++n)
         {
-            float input[] = { x[n] };
+            float input[] = {x[n], effect};
             x[n] = model.forward(input);
         }
     }
@@ -193,7 +194,7 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
     return new RTNPlugInAudioProcessor();
 }
 
-void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 16>, RTNeural::DenseT<float, 16, 1>>& model)
+void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 16>, RTNeural::DenseT<float, 16, 1>>& model)
 {
     nlohmann::json modelJson;
     jsonStream >> modelJson;
@@ -212,7 +213,7 @@ void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::Mod
     RTNeural::torch_helpers::loadDense<float>(modelJson, "dense.", dense);
 }
 
-void RTNPlugInAudioProcessor::loadModelRun(std::ifstream& jsonStream, RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 32>, RTNeural::DenseT<float, 32, 1>> model)
+void RTNPlugInAudioProcessor::loadModelRun(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 32>, RTNeural::DenseT<float, 32, 1>> model)
 {
     using Vec2d = std::vector<std::vector<float>>;
 
@@ -244,3 +245,14 @@ void RTNPlugInAudioProcessor::loadModelRun(std::ifstream& jsonStream, RTNeural::
     dense.setBias(dense_bias.data());
 
 }
+//
+//nlohmann::json RTNPlugInAudioProcessor::get_model_json (std::filesystem::path json_file_path){
+//    
+//    std::ifstream json_stream { json_file_path.string(), std::ifstream::binary };
+//    nlohmann::json model_json;
+//    json_stream >> model_json;
+//    return model_json;
+//}
+//
+//
+//nlohmann::json RTNPlugInAudioProcessor::get_model_json (std::filesystem::path json_file_path);
