@@ -23,7 +23,7 @@ RTNPlugInAudioProcessor::RTNPlugInAudioProcessor()
 #endif
 {
 
-    auto modelFilePath = "C:/Users/Riccardo/OneDrive - Politecnico di Milano/Desktop/uni/SECONDO ANNO/STMAE/Neural plug in non parametico/RTNPlugIn/modelParametricTest2.json";
+    auto modelFilePath = "/Users/alessandroorsatti/Documents/GitHub/Selected_topics/modelParametricDIST24final.json";
     std::ifstream jsonStream(modelFilePath, std::ifstream::binary);
     loadModel(jsonStream,model);
 
@@ -194,7 +194,7 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
     return new RTNPlugInAudioProcessor();
 }
 
-void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 16>, RTNeural::DenseT<float, 16, 1>>& model)
+void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 24>, RTNeural::DenseT<float, 24, 1>>& model)
 {
     nlohmann::json modelJson;
     jsonStream >> modelJson;

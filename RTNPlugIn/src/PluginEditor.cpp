@@ -27,7 +27,7 @@ RTNPlugInAudioProcessorEditor::RTNPlugInAudioProcessorEditor (RTNPlugInAudioProc
     phaserKnob.addListener(this);
     addAndMakeVisible(phaserKnob);
     
-    On.setButtonText ("on/off");
+    //On.setButtonText ("on/off");
     On.setToggleState(true, NotificationType::dontSendNotification);
     On.onClick = [this](){play();};
     On.addListener(this);
@@ -51,14 +51,10 @@ void RTNPlugInAudioProcessorEditor::paint (juce::Graphics& g)
 void RTNPlugInAudioProcessorEditor::resized()
 {
     auto border = 4;
-    auto area = getLocalBounds();
-    auto dialArea = area.removeFromTop (area.getHeight() / 2);
+    auto buttonBorder = getWidth()/4;
     
-    phaserKnob.setBounds(dialArea);
-    
-    auto buttonHeight = 30;
-    
-    On.setBounds (area.removeFromTop (buttonHeight).reduced (border));
+    phaserKnob.setBounds(border, border, getWidth() - border, getHeight()/2 - border);
+    On.setBounds (buttonBorder, border+getHeight()/2, getWidth() - 2*buttonBorder, getHeight()/2 - border);
     
 }
 

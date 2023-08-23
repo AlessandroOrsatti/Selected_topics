@@ -126,6 +126,7 @@ private:
         Play,
         Stop
     };
+    
     PlayState playstate {PlayState::Play};
     
     OtherLookAndFeel otherLookAndFeel;
