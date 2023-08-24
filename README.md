@@ -28,3 +28,4 @@ For what concerns the Graphical User Interface, it is composed by:
 The default model is the one using 16 hidden layers. In case you want to try the other models (8 or 24 layers) you have to edit the code: 
 - in the src folder, open the PLugInProcessor.cpp, and insert the new model path at line 26
 - in the src folder, open the PLugInProcessor.cpp, replace 16 with either 8 or 24 at line 202
+- in the src folder, open the PLugInProcessor.h, replace 16 with either 8 or 24 at lines 57 and 63 
