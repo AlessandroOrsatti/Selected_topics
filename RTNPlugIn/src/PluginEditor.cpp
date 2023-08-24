@@ -19,7 +19,6 @@ RTNPlugInAudioProcessorEditor::RTNPlugInAudioProcessorEditor (RTNPlugInAudioProc
     // editor's size to whatever you need it to be.
     setSize (400, 300);
     
-    
     phaserKnob.setSliderStyle(Slider::SliderStyle::Rotary);
     phaserKnob.setTextBoxStyle(juce::Slider::TextEntryBoxPosition::TextBoxBelow, true, 100, 25);
     phaserKnob.setRange(0.0f, 1.0f, 0.05f);
@@ -43,6 +42,9 @@ void RTNPlugInAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
+    juce::Rectangle<int> box (300, 120, 200, 170);
+    g.setColour (juce::Colours::orange);
+    g.fillRect (box);
 
     
     
@@ -51,10 +53,10 @@ void RTNPlugInAudioProcessorEditor::paint (juce::Graphics& g)
 void RTNPlugInAudioProcessorEditor::resized()
 {
     auto border = 4;
-    auto buttonBorder = getWidth()/4;
+    auto buttonBorder = getWidth()/3;
     
     phaserKnob.setBounds(border, border, getWidth() - border, getHeight()/2 - border);
-    On.setBounds (buttonBorder, border+getHeight()/2, getWidth() - 2*buttonBorder, getHeight()/2 - border);
+    On.setBounds (buttonBorder, buttonBorder, buttonBorder, buttonBorder);
     
 }
 
@@ -73,9 +75,11 @@ void RTNPlugInAudioProcessorEditor::buttonClicked (Button* button){
     {
         if (playstate == PlayState::Stop){
             On.onClick = [this](){play();};
+            audioProcessor.func = true;
         }
         else if (playstate == PlayState::Play){
             On.onClick = [this](){stop();};
+            audioProcessor.func = false;
         }
     }
     

@@ -58,6 +58,7 @@ public:
     void loadModelRun(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 32>, RTNeural::DenseT<float, 32, 1>> model);
     
     float effect { 0.5 };
+    bool func;
 
 private:
     RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 24>, RTNeural::DenseT<float, 24, 1>> model;

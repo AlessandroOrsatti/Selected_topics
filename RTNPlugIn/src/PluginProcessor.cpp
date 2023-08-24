@@ -139,25 +139,30 @@ bool RTNPlugInAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts
 
 void RTNPlugInAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
-    juce::ScopedNoDenormals noDenormals;
-    auto totalNumInputChannels  = getTotalNumInputChannels();
-    auto totalNumOutputChannels = getTotalNumOutputChannels();
-
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
-    //for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
-    //    buffer.clear (i, 0, buffer.getNumSamples());
-    for (int ch = 0; ch < buffer.getNumChannels(); ++ch)
-    {
-        auto* x = buffer.getWritePointer(ch);
-        for (int n = 0; n < buffer.getNumSamples(); ++n)
+    if (func == true){
+        
+        juce::ScopedNoDenormals noDenormals;
+        auto totalNumInputChannels  = getTotalNumInputChannels();
+        auto totalNumOutputChannels = getTotalNumOutputChannels();
+        
+        // In case we have more outputs than inputs, this code clears any output
+        // channels that didn't contain input data, (because these aren't
+        // guaranteed to be empty - they may contain garbage).
+        // This is here to avoid people getting screaming feedback
+        // when they first compile a plugin, but obviously you don't need to keep
+        // this code if your algorithm always overwrites all the output channels.
+        for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+               buffer.clear (i, 0, buffer.getNumSamples());
+        
+        
+        for (int ch = 0; ch < buffer.getNumChannels(); ++ch)
         {
-            float input[] = {x[n], effect};
-            x[n] = model.forward(input);
+            auto* x = buffer.getWritePointer(ch);
+            for (int n = 0; n < buffer.getNumSamples(); ++n)
+            {
+                float input[] = {x[n], effect};
+                x[n] = model.forward(input);
+            }
         }
     }
 }
