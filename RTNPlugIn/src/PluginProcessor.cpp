@@ -199,7 +199,7 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
     return new RTNPlugInAudioProcessor();
 }
 
-void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 24>, RTNeural::DenseT<float, 24, 1>>& model)
+void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 16>, RTNeural::DenseT<float, 16, 1>>& model)
 {
     nlohmann::json modelJson;
     jsonStream >> modelJson;
@@ -218,38 +218,6 @@ void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::Mod
     RTNeural::torch_helpers::loadDense<float>(modelJson, "dense.", dense);
 }
 
-void RTNPlugInAudioProcessor::loadModelRun(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 32>, RTNeural::DenseT<float, 32, 1>> model)
-{
-    using Vec2d = std::vector<std::vector<float>>;
-
-    auto& lstm = model.template get<0>();
-    auto& dense = model.template get<1>();
-
-    // read a JSON file
-    nlohmann::json weights_json;
-    jsonStream >> weights_json;
-
-    std::string prefix = "lstm.";
-
-    Vec2d lstm_weights_ih = weights_json.at("lstm.weight_ih_l0");
-    lstm.setWVals(RTNeural::torch_helpers::detail::transpose(lstm_weights_ih));
-
-    Vec2d lstm_weights_hh = weights_json.at("lstm.weightweight_hh_l0");
-    lstm.setUVals(RTNeural::torch_helpers::detail::transpose(lstm_weights_hh));
-
-    std::vector<float> lstm_bias_ih = weights_json.at("lstm.bias_ih_l0");
-    std::vector<float> lstm_bias_hh = weights_json.at("lstm.bias_hh_l0");
-    for (int i = 0; i < 80; ++i)
-        lstm_bias_hh[i] += lstm_bias_ih[i];
-    lstm.setBVals(lstm_bias_hh);
-
-    Vec2d dense_weights = weights_json.at("dense.weight");
-    dense.setWeights(dense_weights);
-
-    std::vector<float> dense_bias = weights_json.at("dense.bias");
-    dense.setBias(dense_bias.data());
-
-}
 //
 //nlohmann::json RTNPlugInAudioProcessor::get_model_json (std::filesystem::path json_file_path){
 //    
