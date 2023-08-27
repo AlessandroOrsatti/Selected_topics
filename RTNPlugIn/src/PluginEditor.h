@@ -16,13 +16,13 @@
 */
 
 
-class RTNPlugInAudioProcessorEditor  : public juce::AudioProcessorEditor,
+class DISTNNPlugInAudioProcessorEditor  : public juce::AudioProcessorEditor,
                                        public juce::Slider::Listener,
                                        public juce::Button::Listener
 {
 public:
-    RTNPlugInAudioProcessorEditor (RTNPlugInAudioProcessor&);
-    ~RTNPlugInAudioProcessorEditor() override;
+    DISTNNPlugInAudioProcessorEditor (DISTNNPlugInAudioProcessor&);
+    ~DISTNNPlugInAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -37,7 +37,7 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    RTNPlugInAudioProcessor& audioProcessor;
+    DISTNNPlugInAudioProcessor& audioProcessor;
     
     enum class PlayState {
         Play,
@@ -50,5 +50,5 @@ private:
     juce::Slider phaserKnob;
     juce::TextButton On;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RTNPlugInAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DISTNNPlugInAudioProcessorEditor)
 };

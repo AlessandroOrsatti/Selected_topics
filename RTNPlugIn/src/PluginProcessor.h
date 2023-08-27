@@ -14,12 +14,12 @@
 //==============================================================================
 /**
 */
-class RTNPlugInAudioProcessor  : public juce::AudioProcessor
+class DISTNNPlugInAudioProcessor  : public juce::AudioProcessor
 {
 public:
     //==============================================================================
-    RTNPlugInAudioProcessor();
-    ~RTNPlugInAudioProcessor() override;
+    DISTNNPlugInAudioProcessor();
+    ~DISTNNPlugInAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -64,5 +64,5 @@ private:
     //std::unique_ptr<RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 32>, RTNeural::DenseT<float, 32, 1>>> modelRun[2];
 
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RTNPlugInAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DISTNNPlugInAudioProcessor)
 };

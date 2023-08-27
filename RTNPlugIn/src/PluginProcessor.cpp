@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-RTNPlugInAudioProcessor::RTNPlugInAudioProcessor()
+DISTNNPlugInAudioProcessor::DISTNNPlugInAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
@@ -29,17 +29,17 @@ RTNPlugInAudioProcessor::RTNPlugInAudioProcessor()
 
 }
 
-RTNPlugInAudioProcessor::~RTNPlugInAudioProcessor()
+DISTNNPlugInAudioProcessor::~DISTNNPlugInAudioProcessor()
 {
 }
 
 //==============================================================================
-const juce::String RTNPlugInAudioProcessor::getName() const
+const juce::String DISTNNPlugInAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool RTNPlugInAudioProcessor::acceptsMidi() const
+bool DISTNNPlugInAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -48,7 +48,7 @@ bool RTNPlugInAudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool RTNPlugInAudioProcessor::producesMidi() const
+bool DISTNNPlugInAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -57,7 +57,7 @@ bool RTNPlugInAudioProcessor::producesMidi() const
    #endif
 }
 
-bool RTNPlugInAudioProcessor::isMidiEffect() const
+bool DISTNNPlugInAudioProcessor::isMidiEffect() const
 {
    #if JucePlugin_IsMidiEffect
     return true;
@@ -66,37 +66,37 @@ bool RTNPlugInAudioProcessor::isMidiEffect() const
    #endif
 }
 
-double RTNPlugInAudioProcessor::getTailLengthSeconds() const
+double DISTNNPlugInAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int RTNPlugInAudioProcessor::getNumPrograms()
+int DISTNNPlugInAudioProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
                 // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int RTNPlugInAudioProcessor::getCurrentProgram()
+int DISTNNPlugInAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void RTNPlugInAudioProcessor::setCurrentProgram (int index)
+void DISTNNPlugInAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const juce::String RTNPlugInAudioProcessor::getProgramName (int index)
+const juce::String DISTNNPlugInAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void RTNPlugInAudioProcessor::changeProgramName (int index, const juce::String& newName)
+void DISTNNPlugInAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
 }
 
 //==============================================================================
-void RTNPlugInAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void DISTNNPlugInAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     model.reset();
 
@@ -105,14 +105,14 @@ void RTNPlugInAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBl
     // initialisation that you need..
 }
 
-void RTNPlugInAudioProcessor::releaseResources()
+void DISTNNPlugInAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool RTNPlugInAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool DISTNNPlugInAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     juce::ignoreUnused (layouts);
@@ -137,7 +137,7 @@ bool RTNPlugInAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts
 }
 #endif
 
-void RTNPlugInAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+void DISTNNPlugInAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     if (func == true){
         
@@ -168,25 +168,25 @@ void RTNPlugInAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
 }
 
 //==============================================================================
-bool RTNPlugInAudioProcessor::hasEditor() const
+bool DISTNNPlugInAudioProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-juce::AudioProcessorEditor* RTNPlugInAudioProcessor::createEditor()
+juce::AudioProcessorEditor* DISTNNPlugInAudioProcessor::createEditor()
 {
-    return new RTNPlugInAudioProcessorEditor (*this);
+    return new DISTNNPlugInAudioProcessorEditor (*this);
 }
 
 //==============================================================================
-void RTNPlugInAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
+void DISTNNPlugInAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
 }
 
-void RTNPlugInAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void DISTNNPlugInAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
@@ -196,10 +196,10 @@ void RTNPlugInAudioProcessor::setStateInformation (const void* data, int sizeInB
 // This creates new instances of the plugin..
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new RTNPlugInAudioProcessor();
+    return new DISTNNPlugInAudioProcessor();
 }
 
-void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 16>, RTNeural::DenseT<float, 16, 1>>& model)
+void DISTNNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 16>, RTNeural::DenseT<float, 16, 1>>& model)
 {
     nlohmann::json modelJson;
     jsonStream >> modelJson;
@@ -219,7 +219,7 @@ void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::Mod
 }
 
 //
-//nlohmann::json RTNPlugInAudioProcessor::get_model_json (std::filesystem::path json_file_path){
+//nlohmann::json DISTNNPlugInAudioProcessor::get_model_json (std::filesystem::path json_file_path){
 //    
 //    std::ifstream json_stream { json_file_path.string(), std::ifstream::binary };
 //    nlohmann::json model_json;
@@ -228,4 +228,4 @@ void RTNPlugInAudioProcessor::loadModel(std::ifstream& jsonStream, RTNeural::Mod
 //}
 //
 //
-//nlohmann::json RTNPlugInAudioProcessor::get_model_json (std::filesystem::path json_file_path);
+//nlohmann::json DISTNNPlugInAudioProcessor::get_model_json (std::filesystem::path json_file_path);

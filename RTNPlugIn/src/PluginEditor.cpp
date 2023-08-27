@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-RTNPlugInAudioProcessorEditor::RTNPlugInAudioProcessorEditor (RTNPlugInAudioProcessor& p)
+DISTNNPlugInAudioProcessorEditor::DISTNNPlugInAudioProcessorEditor (DISTNNPlugInAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
     setLookAndFeel (&otherLookAndFeel);
@@ -33,12 +33,12 @@ RTNPlugInAudioProcessorEditor::RTNPlugInAudioProcessorEditor (RTNPlugInAudioProc
     addAndMakeVisible (On);
 }
 
-RTNPlugInAudioProcessorEditor::~RTNPlugInAudioProcessorEditor()
+DISTNNPlugInAudioProcessorEditor::~DISTNNPlugInAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void RTNPlugInAudioProcessorEditor::paint (juce::Graphics& g)
+void DISTNNPlugInAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
@@ -50,7 +50,7 @@ void RTNPlugInAudioProcessorEditor::paint (juce::Graphics& g)
     
 }
 
-void RTNPlugInAudioProcessorEditor::resized()
+void DISTNNPlugInAudioProcessorEditor::resized()
 {
     auto border = 4;
     auto buttonBorder = getWidth()/3;
@@ -60,7 +60,7 @@ void RTNPlugInAudioProcessorEditor::resized()
     
 }
 
-void RTNPlugInAudioProcessorEditor::sliderValueChanged (Slider *slider){
+void DISTNNPlugInAudioProcessorEditor::sliderValueChanged (Slider *slider){
     
     if (slider == &phaserKnob){
         
@@ -69,7 +69,7 @@ void RTNPlugInAudioProcessorEditor::sliderValueChanged (Slider *slider){
     
 }
 
-void RTNPlugInAudioProcessorEditor::buttonClicked (Button* button){
+void DISTNNPlugInAudioProcessorEditor::buttonClicked (Button* button){
     
    if (button == &On)
     {
@@ -85,12 +85,12 @@ void RTNPlugInAudioProcessorEditor::buttonClicked (Button* button){
     
 }
 
-void RTNPlugInAudioProcessorEditor::play(){
+void DISTNNPlugInAudioProcessorEditor::play(){
     playstate = PlayState::Play;
     On.setToggleState(true, NotificationType::dontSendNotification);
     On.setColour((TextButton::ColourIds::buttonColourId), Colours::limegreen);
 }
-void RTNPlugInAudioProcessorEditor::stop(){
+void DISTNNPlugInAudioProcessorEditor::stop(){
     playstate = PlayState::Stop;
     On.setToggleState(false, NotificationType::dontSendNotification);
     On.setColour((TextButton::ColourIds::buttonColourId), Colours::rebeccapurple);

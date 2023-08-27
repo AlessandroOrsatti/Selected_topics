@@ -1,9 +1,10 @@
 //
 //  setLookAndFeel.h
-//  RTNPLUGIN2
+//  DIST-NN
 //
 //  Created by Alessandro Orsatti on 24/08/23.
-//
+//  This class contais all the information regarding the styling of our plugin
+//  The parameter slider and the on/off button design instructions lives inside this class
 
 #ifndef setLookAndFeel_h
 #define setLookAndFeel_h
