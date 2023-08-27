@@ -1,15 +1,16 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(DIST-NN VERSION 0.0.1)
+project(DIST_NN VERSION 0.0.1)
 
 # find_package(JUCE CONFIG REQUIRED)        # If you've installed JUCE to your system
 # or
-add_subdirectory(C:/juce/JUCE ./JUCE)                    # If you've put JUCE in a subdirectory called JUCE
+add_subdirectory(/Users/alessandroorsatti/Documents/JUCE ./JUCE)                    # If you've put JUCE in a subdirectory called JUCE
 
 
 set(RTNEURAL_EIGEN ON CACHE BOOL "Use RTNeural with EIGEN backend" FORCE)
 add_subdirectory(../RTNeural ${CMAKE_CURRENT_BINARY_DIR}/RTNeural)
 include_directories(../RTNeural)
+
 
 
 juce_add_plugin(DIST-NN
@@ -34,14 +35,18 @@ juce_generate_juce_header(DIST-NN)
 
 
 
-target_sources(DIST-NN
+
+
+target_sources(DIST_NN
     PRIVATE
     src/PluginEditor.cpp
     src/PluginProcessor.cpp
     src/PluginEditor.h
     src/PluginProcessor.h)
 
-target_compile_definitions(DIST-NN
+
+target_compile_definitions(DIST_NN
+
     PUBLIC # 
         JUCE_ALSA=1
         JUCE_DIRECTSOUND=1
@@ -57,7 +62,7 @@ target_compile_definitions(DIST-NN
         JUCE_VST3_CAN_REPLACE_VST2=0)
 
 
-target_link_libraries(DIST-NN
+target_link_libraries(DIST_NN
     PRIVATE
         juce::juce_audio_utils
         juce::juce_dsp
