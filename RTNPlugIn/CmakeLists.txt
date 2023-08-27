@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(RTNPLUGIN2 VERSION 0.0.1)
+project(DIST-NN VERSION 0.0.1)
 
 # find_package(JUCE CONFIG REQUIRED)        # If you've installed JUCE to your system
 # or
@@ -12,7 +12,7 @@ add_subdirectory(../RTNeural ${CMAKE_CURRENT_BINARY_DIR}/RTNeural)
 include_directories(../RTNeural)
 
 
-juce_add_plugin(RTNPLUGIN2
+juce_add_plugin(DIST-NN
     # VERSION ...                               # Set this if the plugin version is different to the project version
     # ICON_BIG ...                              # ICON_* arguments specify a path to an image file to use as an icon for the Standalone
     # ICON_SMALL ...
@@ -28,20 +28,20 @@ juce_add_plugin(RTNPLUGIN2
     PLUGIN_CODE Dude                            # A unique four-character plugin id with exactly one upper-case character
                                                 # GarageBand 10.3 requires the first letter to be upper-case, and the remaining letters to be lower-case
     FORMATS AU VST3 Standalone                  # The formats to build. Other valid formats are: AAX Unity VST AU AUv3
-    PRODUCT_NAME "RTNPLUGIN2")        # The name of the final executable, which can differ from the target name
+    PRODUCT_NAME "DIST-NN")        # The name of the final executable, which can differ from the target name
 
-juce_generate_juce_header(RTNPLUGIN2)
+juce_generate_juce_header(DIST-NN)
 
 
 
-target_sources(RTNPLUGIN2
+target_sources(DIST-NN
     PRIVATE
     src/PluginEditor.cpp
     src/PluginProcessor.cpp
     src/PluginEditor.h
     src/PluginProcessor.h)
 
-target_compile_definitions(RTNPLUGIN2
+target_compile_definitions(DIST-NN
     PUBLIC # 
         JUCE_ALSA=1
         JUCE_DIRECTSOUND=1
@@ -57,7 +57,7 @@ target_compile_definitions(RTNPLUGIN2
         JUCE_VST3_CAN_REPLACE_VST2=0)
 
 
-target_link_libraries(RTNPLUGIN2
+target_link_libraries(DIST-NN
     PRIVATE
         juce::juce_audio_utils
         juce::juce_dsp
