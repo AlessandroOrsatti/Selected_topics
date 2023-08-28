@@ -1,6 +1,6 @@
-# RTNPlugIn - A parametric distortion neural effect
+# DIST-NN - A parametric distortion neural effect
 ## Introduction 
-In this project for the "Selected Topics in Music and Acoustic Engineering" course, we presents RTNPlugIn, a parametric neural effect for distortion. The Plug In is implemented in C++ using the JUCE framework for reliability and speed. For what concerns the management of the neural networks, we decided to go with RTNeural, a lightweight neural network inferencing engine. 
+In this project for the "Selected Topics in Music and Acoustic Engineering" course, we presents DIST-NN, a parametric neural effect for distortion. The Plug In is implemented in C++ using the JUCE framework for reliability and speed. For what concerns the management of the neural networks, we decided to go with RTNeural, a lightweight neural network inferencing engine. 
 ## Training
 For the training procedure, we used Google Colab for generating the models and Google Drive for storing the .json files. 
 The training pipeline is the following: 
