@@ -26,7 +26,7 @@ For what concerns the Graphical User Interface, it is composed by:
 - download JUCE here: https://juce.com/download/
 - put the RTNeural folder inside the repository folder
 - open the CmakeLists.txt file, and insert your JUCE path at line 7
-- in the src folder, open the PLugInProcessor.cpp, and insert the model "modelParametricDIST16.json" (you can find it into the "Models" folder) path at line 26
+- in the src folder, open the PlugInProcessor.cpp, and insert the model "modelParametricDIST16.json" (you can find it into the "Models" folder) path at line 26
 - from terminal, go to the plug in folder and run: cmake --build build --config Release
 - from the build folder created in thge previous point, go to the Release folder and find the .vst3 file
 ### Usage
