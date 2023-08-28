@@ -10,19 +10,19 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
-#include "setLookAndFeel"
+#include "setLookAndFeel.h"
 //==============================================================================
 /**
 */
 
 
-class DISTNNPlugInAudioProcessorEditor  : public juce::AudioProcessorEditor,
+class DISTNNAudioProcessorEditor  : public juce::AudioProcessorEditor,
                                        public juce::Slider::Listener,
                                        public juce::Button::Listener
 {
 public:
-    DISTNNPlugInAudioProcessorEditor (DISTNNPlugInAudioProcessor&);
-    ~DISTNNPlugInAudioProcessorEditor() override;
+    DISTNNAudioProcessorEditor (DISTNNAudioProcessor&);
+    ~DISTNNAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -35,9 +35,9 @@ public:
     void stop();
 
 private:
-    // This reference is provided as a quick way for your editor to
-    // access the processor object that created it.
-    DISTNNPlugInAudioProcessor& audioProcessor;
+    
+    juce::Image background;
+    DISTNNAudioProcessor& audioProcessor;
     
     enum class PlayState {
         Play,
@@ -49,6 +49,7 @@ private:
     OtherLookAndFeel otherLookAndFeel;
     juce::Slider phaserKnob;
     juce::TextButton On;
+    juce::File imagesDir;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DISTNNPlugInAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DISTNNAudioProcessorEditor)
 };

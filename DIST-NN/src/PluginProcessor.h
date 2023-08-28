@@ -14,12 +14,12 @@
 //==============================================================================
 /**
 */
-class DISTNNPlugInAudioProcessor  : public juce::AudioProcessor
+class DISTNNAudioProcessor  : public juce::AudioProcessor
 {
 public:
     //==============================================================================
-    DISTNNPlugInAudioProcessor();
-    ~DISTNNPlugInAudioProcessor() override;
+    DISTNNAudioProcessor();
+    ~DISTNNAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -54,15 +54,16 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
-    void loadModel(std::ifstream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 16>, RTNeural::DenseT<float, 16, 1>>& model);
+    void loadModel(MemoryInputStream& jsonStream, RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 16>, RTNeural::DenseT<float, 16, 1>>& model);
     
     float effect { 0.5 };
-    bool func;
+    bool func {true};
 
 private:
     RTNeural::ModelT<float, 2, 1, RTNeural::LSTMLayerT<float, 2, 16>, RTNeural::DenseT<float, 16, 1>> model;
+    juce::File modelsDir;
     //std::unique_ptr<RTNeural::ModelT<float, 1, 1, RTNeural::LSTMLayerT<float, 1, 32>, RTNeural::DenseT<float, 32, 1>>> modelRun[2];
 
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DISTNNPlugInAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DISTNNAudioProcessor)
 };
