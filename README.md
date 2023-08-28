@@ -15,7 +15,8 @@ For what concerns the Graphical User Interface, it is composed by:
 - an On/Off button that enables or disables the effect
 - a knob that controls the amount of effect to apply (in our case, the distortion)
 
-![DIST-NN_GUI](https://github.com/AlessandroOrsatti/Selected_topics/assets/94984780/22d5928e-b9c6-4540-8a0e-c9735fa01794)
+![DIST-NN_GUI](https://github.com/AlessandroOrsatti/Selected_topics/assets/94984780/fa19c5fd-2e83-41de-b428-8a23c4557bf0)
+
 
   
 ## Requirements and Usage
