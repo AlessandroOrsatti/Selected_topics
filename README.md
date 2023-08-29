@@ -29,7 +29,7 @@ For what concerns the Graphical User Interface, it is composed by:
 - open the CmakeLists.txt file, and insert your JUCE path at line 7
 - copy and paste the DistNNutils folder to your Deskstop (this is just for showing the background image) 
 - from terminal, go to the plug in folder and run: cmake --build build --config Release
-- from the build folder created in thge previous point, go to the Release folder and find the .vst3 file
+- from the build folder created in the previous point, go to the Release folder and find the .vst3 file
 ### Usage
 The default model is the one using 16 hidden layers. In case you want to try the other models (8, 24 or 32 layers) you have to edit the code: 
 - in the src folder, open the PlugInProcessor.cpp, at line 25 the 16 hidden layers model is loaded. If you want to change model, substitute "modelParametricDIST16_json" with "modelParametricDIST8_json", "modelParametricDIST24_json" or "modelParametricDIST32_json"
